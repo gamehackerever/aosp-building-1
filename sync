@@ -1,7 +1,7 @@
 #!/bin/bash
 
-MANIFEST=git://github.com/RevengeOS/android_manifest.git
-BRANCH=r11.0
+MANIFEST=https://github.com/StyxProject/manifest
+BRANCH=R
 
 mkdir -p /tmp/rom
 cd /tmp/rom
@@ -15,14 +15,13 @@ git config --global user.email vixanonew@gmail.com
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # Sync stuffs
-find hardware/qcom-caf/msm8996/display hardware/qcom-caf/msm8996/audio hardware/qcom-caf/msm8996/media vendor/codeaurora/telephony/ frameworks/base/ .repo/ -delete
+find hardware/qcom-caf/msm8996/display hardware/qcom-caf/msm8996/audio hardware/qcom-caf/msm8996/media vendor/codeaurora/telephony/ .repo/ -delete
 
 git clone https://github.com/wave-project/vendor_codeaurora_telephony --depth=1 --single-branch vendor/codeaurora/telephony/
 git clone https://github.com/Jabiyeff/android_hardware_qcom_media --depth=1 --single-branch hardware/qcom-caf/msm8996/media
 git clone https://github.com/Jabiyeff/android_hardware_qcom_display --depth=1 --single-branch hardware/qcom-caf/msm8996/display
 git clone https://github.com/LineageOS/android_hardware_qcom_audio --depth=1 --single-branch -b lineage-18.1-caf-msm8996 hardware/qcom-caf/msm8996/audio
-git clone "$DONTMINDME" --depth=1 --single-branch frameworks/base/
 
-git clone https://github.com/ItsVixano/android_device_xiaomi_ysl --depth=1 --single-branch -b r11.0 device/xiaomi/ysl
-git clone https://github.com/ItsVixano/android_vendor_xiaomi_ysl --depth=1 --single-branch -b r11.0 vendor/xiaomi/ysl
-git clone https://github.com/ItsVixano/android_kernel_xiaomi_ysl --depth=1 --single-branch -b eleven kernel/xiaomi/ysl
+git clone https://github.com/StyxProject-Devices/device_xiaomi_ysl --depth=1 --single-branch -b R device/xiaomi/ysl
+git clone https://github.com/StyxProject-Devices/vendor_xiaomi_ysl --depth=1 --single-branch -b R vendor/xiaomi/ysl
+git clone https://github.com/StyxProject-Devices/kernel_xiaomi_ysl --depth=1 --single-branch -b R kernel/xiaomi/ysl
