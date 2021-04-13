@@ -16,8 +16,8 @@ repo init -q --no-repo-verify --depth=1 -u https://github.com/Spark-Rom/manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8
 
 # device stuff
-git clone https://github.com/adnan-44/device_xiaomi_vince --single-branch -b derp-11 device/xiaomi/vince
-git clone https://github.com/adnan-44/vendor_xiaomi_vince --single-branch -b derp-11 vendor/xiaomi/vince
+git clone https://github.com/gamehackerever/device_xiaomi_vince -b spark device/xiaomi/vince
+git clone https://github.com/gamehackerever/vendor_xiaomi_vince -b 11 vendor/xiaomi/vince
 git clone https://github.com/Blacksuan19/kernel_dark_ages_vince.git --single-branch -b darky kernel/xiaomi/vince
 cd kernel/xiaomi/vince && git checkout darky && git revert fec013b9f5bb70c1e51285aa6e042f21f4298447 --no-edit && cd ../../..
 
