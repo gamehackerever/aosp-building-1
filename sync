@@ -19,5 +19,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 git clone https://github.com/gamehackerever/device_xiaomi_vince -b testing device/xiaomi/vince
 git clone https://github.com/gamehackerever/vendor_xiaomi_vince -b testing vendor/xiaomi/vince
 git clone https://github.com/Blacksuan19/kernel_dark_ages_vince.git --single-branch -b darky kernel/xiaomi/vince
+rm -rf hardware/qcom-caf/msm8996/display && git clone https://github.com/smokey18/hardware_qcom_display hardware/qcom-caf/msm8996/display
+rm -rf hardware/qcom-caf/msm8996/audio && git clone https://github.com/smokey18/hardware_qcom_audio hardware/qcom-caf/msm8996/audio
+rm -rf hardware/qcom-caf/msm8996/media && git clone https://github.com/smokey18/hardware_qcom_media hardware/qcom-caf/msm8996/media
 cd kernel/xiaomi/vince && git checkout darky && git revert fec013b9f5bb70c1e51285aa6e042f21f4298447 --no-edit && cd ../../..
 
