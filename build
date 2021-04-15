@@ -1,9 +1,9 @@
 #!/bin/bash
-cd /tmp/rom/spark # Depends on where source got synced
+cd /tmp/rom/aosp # Depends on where source got synced
 
 # Normal build steps
 . build/envsetup.sh
-lunch spark_vince-userdebug
+lunch aosp_vince-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1

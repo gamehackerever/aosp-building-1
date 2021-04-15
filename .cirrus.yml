@@ -8,7 +8,7 @@ env: # Environt variable to pass to all tasks
     bot_api_code: "ENCRYPTED[d965b35b59bd7c88d0faf5bf35eac3893d4d4d021d50177783de46fbb80eecf9beaf8d1c3dd196feeeaa029afa277b8c]"
 
 task:
-    name: SparkOS # Project name
+    name: Pex # Project name
     timeout_in: 120m # Otherwise it will timeout at 60m automatically, 120m highest in free account
     container:
       image: apon77/aosp:latest # It has built in setup environment + repo, aria2, rclone, pigz, username ci, and email ci@ci.ci [You can use your own docker image if you want, or you can use this one too!]
