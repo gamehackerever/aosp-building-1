@@ -18,7 +18,7 @@ ccache -z # Clear old stats, so monitor script will provide real ccache statisti
 #make test-api-stubs-docs || echo no problem, we need ccache
 #make aosp -j10 & # dont remove that '&'
 brunch vince &
-sleep 85m
+sleep 92m
 kill %1
 ccache -s
 #and dont use below codes for first 1 or 2 times, to get ccache uploaded,
